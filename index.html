@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#030201">
+<title>Muhammad Asber Ali — Software Developer | Python & AI</title>
+<meta name="description" content="Portfolio of Muhammad Asber Ali — aspiring software developer focused on Python, AI and modern web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;900&family=Fira+Code&display=swap" rel="stylesheet">
+<!-- Three.js for 3D Hero -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CINEMATIC INTRO -->
+<div id="preloader">
+  <div class="intro-text" id="introText">SYSTEM.BOOT()</div>
+</div>
+
+<div class="noise-overlay"></div>
+<div id="trail-container"></div>
+<canvas id="confettiCanvas"></canvas>
+
+<!-- MODERN GLASS NAVIGATION -->
+<nav class="main-nav glass-panel">
+  <div class="nav-logo">Asber<span>.</span></div>
+  <div class="nav-links" id="navLinks">
+    <a href="#ch1" class="active">Home</a>
+    <a href="#ch2">About</a>
+    <a href="#ch3">Skills</a>
+    <a href="#ch4">Work</a>
+    <a href="#ch6">Contact</a>
+    <a href="#archive" class="nav-btn">Archive ↗</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="scrollSpace"></div>
+
+<div id="stage">
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+
+  <div id="grid"></div>
+  <canvas id="fx"></canvas>
+
+  <!-- CH1 : THE GATE -->
+  <section class="chapter" id="ch1">
+    <canvas id="hero-3d-canvas"></canvas>
+    <div id="doorGlow"></div>
+    <div class="sw" id="sw1"></div>
+    <div class="sw" id="sw2"></div>
+    <div id="doorWrap">
+      <div id="heroName"></div>
+      <div id="heroRole"></div>
+      <div id="heroTag"></div>
+      <div class="leaf" id="leafL"></div>
+      <div class="leaf" id="leafR"></div>
+      <div id="seam"></div>
+    </div>
+
+    <div class="hero-stats-bar">
+      <div class="hero-stat-item"><b>5+</b><span>PROJECTS</span></div>
+      <div class="hero-stat-item"><b>4</b><span>TECHS</span></div>
+      <div class="hero-stat-item"><b>2028</b><span>GRAD</span></div>
+      <div class="hero-stat-item"><b>24H</b><span>REPLY</span></div>
+    </div>
+
+    <div class="hero-actions">
+      <!-- Changed href to #archive -->
+      <a href="#archive" class="btn btn-primary" id="viewWorkBtn">View My Work</a>
+      <a href="#ch6" class="btn btn-secondary">Contact Me</a>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- CH2 : IDENTITY -->
+  <section class="chapter" id="ch2">
+    <div class="bignum">02</div>
+    <div class="inner">
+    <div id="idCard" class="glass-panel">
+      <div id="avatar"></div>
+      <div class="small">IDENTITY // VERIFIED</div>
+      <div id="idName"></div>
+      <div id="idStatus">● AVAILABLE FOR INTERNSHIPS</div>
+      <div class="small" id="loc"></div>
+      <button id="resumeBtn" type="button" class="btn btn-secondary" style="margin-top: 10px; width: 100%; padding: 10px;">Request Resume</button>
+    </div>
+    <div>
+      <div class="chapTag rv">// 01 — WHO AM I</div>
+      <h2 class="chapTitle rv"><span class="sc" id="scA">ABOUT</span> <em>ME</em></h2>
+      <div id="bio"></div>
+      <div class="services-grid" id="servicesGrid"></div>
+      <div id="statGrid"></div>
+    </div>
+  </div></section>
+
+  <!-- CH3 : SKILL MATRIX -->
+  <section class="chapter" id="ch3">
+    <div class="bignum">03</div>
+    <div class="inner">
+
+    <div id="skillVisual">
+      <div class="radar-container">
+        <canvas id="radarChart"></canvas>
+      </div>
+    </div>
+
+    <div id="skillHead">
+      <div class="chapTag">// 02 — ARSENAL</div>
+      <h2 class="chapTitle"><span class="sc" id="scB">SKILL</span> <em>MATRIX</em></h2>
+      <p class="dim" style="font-size:16px; line-height:1.8;">Hands-on practice through independent projects — every skill below is trained by building real things, not just watching tutorials.</p>
+
+      <div id="tools">
+        <div class="lab">▸ TOOLS & TECHNOLOGIES</div>
+        <div class="tools-grid" id="toolsGrid"></div>
+
+        <div class="lab">▸ CURRENTLY LEARNING</div>
+        <div class="chiprow" id="learnRow"></div>
+
+        <div class="lab" style="margin-top:22px">▸ AREAS OF INTEREST</div>
+        <div class="chiprow" id="intRow"></div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- CH4 : PROJECT VAULT -->
+  <section class="chapter" id="ch4">
+    <div class="chapTag" id="projTag">// 03 — SELECTED WORK · 5 BUILDS</div>
+    <div id="projStage"></div>
+  </section>
+
+  <!-- CH5 : THE JOURNEY -->
+  <section class="chapter" id="ch5">
+    <div class="bignum">05</div>
+    <div class="inner">
+    <div class="chapTag" id="cvTag">// 04 — EDUCATION & DIRECTION</div>
+    <h2 class="chapTitle" id="cvTitle"><span class="sc" id="scC">THE</span> <em>JOURNEY</em></h2>
+    <div id="tlWrap">
+      <div id="tlLine"><div id="tlFill"></div></div>
+      <div id="tlItems"></div>
+    </div>
+  </div></section>
+
+  <!-- CH6 : TRANSMIT -->
+  <section class="chapter" id="ch6">
+    <div id="portal">
+      <div class="rot"><div class="ring"></div></div>
+      <div class="rot r2w"><div class="ring"></div></div>
+      <div class="rot r3w"><div class="ring"></div></div>
+      <div class="rot r4w"><div class="ring"></div></div>
+      <div class="emit"></div>
+      <div class="emit p2"></div>
+      <div id="core"></div>
+    </div>
+    <div class="inner">
+      <div class="chapTag rv">// 05 — TRANSMISSION OPEN</div>
+      <h2 class="chapTitle rv"><span class="sc" id="scD">LET'S BUILD</span> <em>SOMETHING REAL</em></h2>
+
+      <form class="contact-form glass-panel rv" id="contactForm">
+        <div class="form-group">
+          <label>NAME</label>
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label>EMAIL</label>
+          <input type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>TOPIC</label>
+          <select required>
+            <option value="" disabled selected>Select a topic...</option>
+            <option value="internship">Internship Opportunity</option>
+            <option value="project">Project Collaboration</option>
+            <option value="freelance">Freelance Work</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>MESSAGE</label>
+          <textarea placeholder="How can we build something together?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">SEND TRANSMISSION</button>
+        <div class="form-status" id="formStatus">● TRANSMISSION SUCCESSFUL. AWAITING REPLY.</div>
+      </form>
+
+      <div id="socials" class="rv"></div>
+      <div id="sig" class="rv">● SIGNAL STRONG — REPLY WITHIN 24H</div>
+      <div id="foot" class="rv"></div>
+    </div>
+  </section>
+
+  <div id="scan"></div>
+  <div id="vig"></div>
+
+  <div id="rail">
+    <div id="pbar"></div>
+    <div id="phead"></div>
+  </div>
+  <div id="pct">0%</div>
+</div>
+
+<!-- STICKY HIRE ME BUTTON -->
+<a href="#ch6" class="hire-btn">
+  <div class="pulse-dot"></div>
+  HIRE ME
+</a>
+
+<!-- AUDIO TOGGLE -->
+<button id="audioToggle" title="Toggle Synthwave Audio" aria-label="Toggle ambient audio">
+  <svg viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+</button>
+
+<!-- ARCHIVE SECTION -->
+<section id="archive">
+  <div class="chapTag">// 06 — FULL INDEX</div>
+  <h2 class="chapTitle">PROJECT <em>ARCHIVE</em></h2>
+  <div id="archiveCount">05 ENTRIES · ALL BUILDS · HANDCRAFTED</div>
+  <div class="agrid" id="agrid"></div>
+
+  <!-- LATEST LOGS -->
+  <div class="logs-section">
+    <div class="logs-header">
+      <div class="chapTag">// 07 — LATEST LOGS</div>
+      <h3>THOUGHTS & UPDATES</h3>
+    </div>
+    <div id="logsGrid"></div>
+  </div>
+
+  <div id="afoot">
+    <span id="afootTxt"></span>
+    <div id="afootLinks"></div>
+  </div>
+</section>
+
+<!-- RESUME MODAL -->
+<div id="resumeModal" class="modal-overlay">
+  <div class="modal-content glass-panel resume-card">
+    <button class="modal-close" id="resumeClose" aria-label="Close">×</button>
+    <h2 class="resume-title">RESUME REQUEST</h2>
+    <p class="resume-text">My full resume is available upon request. Open your mail app or copy my email address below. I usually reply within 24 hours.</p>
+    
+    <div class="resume-actions">
+      <a id="resumeMail" class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=zerotwosss188@gmail.com&su=Resume%20Request%20-%20Portfolio" target="_blank">OPEN MAIL APP ↗</a>
+      <button id="resumeCopy" class="btn btn-secondary" type="button">COPY EMAIL</button>
+    </div>
+    
+    <div class="resume-email">zerotwosss188@gmail.com</div>
+  </div>
+</div>
+
+<!-- PROJECT MODAL -->
+<div id="projectModal" class="modal-overlay">
+  <div class="modal-content glass-panel">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
